@@ -23,7 +23,7 @@ export default class CreateExercise extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:'+process.env.REACT_APP_BACKEND_PORT+'/users/')
+        axios.get('https://localhost:'+process.env.REACT_APP_BACKEND_PORT+'/users/')
             .then(response => {
                 if (response.data.length > 0) {
                     this.setState({
@@ -74,7 +74,7 @@ export default class CreateExercise extends Component {
 
         console.log(exercise);
 
-        axios.post('http://'+process.env.REACT_APP_BACKEND_HOSTNAME+':'+process.env.REACT_APP_BACKEND_PORT+'/exercises/add', exercise)
+        axios.post('https://'+process.env.REACT_APP_BACKEND_HOSTNAME+':'+process.env.REACT_APP_BACKEND_PORT+'/exercises/add', exercise)
             .then(res => console.log(res.data));
 
         window.location = '/';

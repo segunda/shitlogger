@@ -23,7 +23,7 @@ export default class CreateExercise extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://localhost:'+process.env.REACT_APP_BACKEND_PORT+'/users/')
+        axios.get('https://'+process.env.REACT_APP_BACKEND_HOSTNAME+':'+process.env.REACT_APP_BACKEND_PORT+'/users/')
             .then(response => {
                 if (response.data.length > 0) {
                     this.setState({
